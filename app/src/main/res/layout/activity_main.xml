@@ -4,5 +4,90 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/backgoround_vol2"/>
+    tools:context=".activities.MainActivity"
+    android:background="@drawable/background_vol2">
+
+    <ImageView
+        android:id="@+id/logo_ponton_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/ponton_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_ponton_main" />
+
+    <Button
+        android:id="@+id/button_ksiazeczka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/button_ksiazeczka"
+        app:layout_constraintEnd_toEndOf="@+id/logo_ponton_main"
+        app:layout_constraintStart_toStartOf="@+id/logo_ponton_main"
+        app:layout_constraintTop_toBottomOf="@+id/logo_ponton_main" />
+
+    <TextView
+        android:id="@+id/textView_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/aktualny_wynik"
+        android:fontFamily="@font/light"
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="@+id/button_ksiazeczka"
+        app:layout_constraintStart_toStartOf="@+id/button_ksiazeczka"
+        app:layout_constraintTop_toBottomOf="@+id/button_ksiazeczka" />
+
+    <Button
+        android:id="@+id/button_level1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/button_level1_unlocked"
+        app:layout_constraintEnd_toEndOf="@+id/logo_ponton_main"
+        app:layout_constraintStart_toStartOf="@+id/logo_ponton_main"
+        app:layout_constraintTop_toBottomOf="@+id/textView_score" />
+
+    <ImageView
+        android:id="@+id/separator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:contentDescription="@string/separator"
+        app:layout_constraintEnd_toEndOf="@+id/button_level1"
+        app:layout_constraintStart_toStartOf="@+id/button_level1"
+        app:layout_constraintTop_toBottomOf="@+id/button_level1"
+        app:srcCompat="@drawable/separator_question" />
+
+    <ImageView
+        android:id="@+id/separator2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:contentDescription="@string/separator"
+        app:layout_constraintEnd_toEndOf="@+id/button_level2"
+        app:layout_constraintStart_toStartOf="@+id/button_level2"
+        app:layout_constraintTop_toBottomOf="@+id/button_level2"
+        app:srcCompat="@drawable/separator_question" />
+
+    <Button
+        android:id="@+id/button_level2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/button_level2_locked"
+        app:layout_constraintEnd_toEndOf="@+id/logo_ponton_main"
+        app:layout_constraintStart_toStartOf="@+id/logo_ponton_main"
+        app:layout_constraintTop_toBottomOf="@+id/separator" />
+
+    <Button
+        android:id="@+id/button_menu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_option_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

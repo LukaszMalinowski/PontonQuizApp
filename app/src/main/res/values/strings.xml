@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">PontonQuizApp</string>
+    <string name="ponton_logo">ponton logo</string>
+    <string name="aktualny_wynik">aktualny wynik:</string>
+    <string name="separator">separator</string>
+    <string name="logo_ponton_question">logo_ponton_question</string>
+    <string name="poziom1">Poziom1</string>
+    <string name="pytanie_1">Pytanie 1</string>
+    <string name="tre_pytania">Treść pytania</string>
+    <string name="quiz">Quiz</string>
+    <string name="o_nas">O nas</string>
+    <string name="kontakt">Kontakt</string>
+    <string name="quiz">Quiz</string>
 </resources>
