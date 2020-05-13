@@ -5,14 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.ContextThemeWrapper;
+import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.PopupMenu;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import pl.org.ponton.pontonquizapp.R;
@@ -57,39 +61,30 @@ public class MainActivity extends AppCompatActivity {
         buttonMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Context wrapper = new ContextThemeWrapper(MainActivity.this, R.style.popupMenuStyle);
-                PopupMenu popup = new PopupMenu(wrapper, v);
-                MenuInflater inflater = popup.getMenuInflater();
-                inflater.inflate(R.menu.menu, popup.getMenu());
+                initPopupWindow();
+            }
+        });
+    }
 
-                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem item) {
-                        switch (item.getItemId()) {
-                            case R.id.item_quiz:
-                                //TODO
-                                return true;
+    private void initPopupWindow() {
+        LayoutInflater inflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-                            case R.id.item_o_nas:
-                                //TODO
-                                return true;
+        View layout = inflater.inflate(R.layout.menu_layout, null);
 
-                            case R.id.item_kontakt:
-                                //TODO
-                                return true;
+        layout.measure(View.MeasureSpec.UNSPECIFIED,
+                View.MeasureSpec.UNSPECIFIED);
+        PopupWindow popup = new PopupWindow(layout, FrameLayout.LayoutParams.WRAP_CONTENT,
+                FrameLayout.LayoutParams.WRAP_CONTENT, true);
+        popup.showAsDropDown(buttonMenu, 5, 5);
 
-                            case R.id.item_web_page:
-                                Intent openWebPage = new Intent(Intent.ACTION_VIEW, Uri.parse("http://ponton.org.pl/"));
-                                startActivity(openWebPage);
-                                return true;
+        initMenuButtons();
+    }
 
-                            default:
-                                return false;
-                        }
-                    }
-                });
-
-                popup.show();
+    private void initMenuButtons() {
+        ((Button) findViewById(R.id.menu_button_web_page)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
             }
         });
     }

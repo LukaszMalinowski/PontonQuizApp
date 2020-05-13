@@ -5,15 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF5A00">
+    android:background="#B3FF5A00"
+    android:id="@+id/menu_layout">
 
     <Button
         android:id="@+id/menu_button_quiz"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        android:gravity="end"
-        android:paddingEnd="30dp"
         android:text="@string/quiz"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
@@ -26,8 +25,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        android:gravity="end"
-        android:paddingEnd="30dp"
         android:text="@string/o_nas"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
@@ -41,8 +38,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        android:gravity="end"
-        android:paddingEnd="30dp"
         android:text="@string/kontakt"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
@@ -80,12 +75,10 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/menu_button_strona"
+        android:id="@+id/menu_button_web_page"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        android:gravity="end"
-        android:paddingEnd="30dp"
         android:text="@string/ponton_page"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
