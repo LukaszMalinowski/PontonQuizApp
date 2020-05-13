@@ -34,6 +34,7 @@
         android:gravity="center"
         android:text="@string/poziom1"
         android:textColor="#FFFFFF"
+        android:paddingBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/textView_questionCount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -46,6 +47,7 @@
         android:gravity="center"
         android:text="@string/pytanie_1"
         android:textColor="#FFFFFF"
+        android:paddingBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/textView_questionValue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

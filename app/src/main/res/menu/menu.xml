@@ -10,5 +10,10 @@
     <item
         android:id="@+id/item_kontakt"
         android:title="@string/kontakt" />
+    <item
+        android:id="@+id/item_web_page"
+        android:title="ponton.org.pl" />
 
+
+<!--    TODO https://stackoverflow.com/questions/21469792/how-can-i-change-popup-item-width-size-->
 </menu>

@@ -6,6 +6,12 @@
         <item name="colorPrimary">#FF5A00</item>
         <item name="colorPrimaryDark">#FF5A00</item>
         <item name="colorAccent">#FF5A00</item>
+
+    </style>
+    
+    <style name="popupMenuStyle" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:itemBackground">#6DFF5A00</item>
+        <item name="android:textColor">#FFFFFF</item>
     </style>
 
 </resources>

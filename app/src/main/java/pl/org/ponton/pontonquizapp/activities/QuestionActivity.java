@@ -25,11 +25,14 @@ import pl.org.ponton.pontonquizapp.questions.QuestionWrapper;
 import pl.org.ponton.pontonquizapp.user.User;
 
 public class QuestionActivity extends AppCompatActivity {
-    private static final String PREFERENCES_NAME = "settingsPreferences";
+
+    public static final String QUESTION_COUNT_EXTRA_VALUE = "QUESTION_COUNT_EXTRA_VALUE";
 
     private SharedPreferences preferences;
 
     private SharedPreferences.Editor editor;
+
+    private TextView textViewQuestionCount;
 
     private List<AnswerButton> buttonList;
 
@@ -41,6 +44,8 @@ public class QuestionActivity extends AppCompatActivity {
 
     private boolean addQuestions = true;
 
+    private Integer questionCount;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +53,9 @@ public class QuestionActivity extends AppCompatActivity {
 
         Context context = getApplicationContext();
 
-        preferences = context.getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE);
+        initQuestionCountText();
+
+        preferences = context.getSharedPreferences(MainActivity.PREFERENCES_NAME, MODE_PRIVATE);
 
         editor = preferences.edit();
 
@@ -68,6 +75,14 @@ public class QuestionActivity extends AppCompatActivity {
                 onBackPressed();
             }
         }
+    }
+
+    private void initQuestionCountText() {
+        questionCount = getIntent().getIntExtra(QUESTION_COUNT_EXTRA_VALUE, 1);
+
+        textViewQuestionCount = findViewById(R.id.textView_questionCount);
+
+        textViewQuestionCount.setText("Pytanie " + questionCount);
     }
 
     @Override
@@ -92,7 +107,11 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
-                startActivity(getIntent());
+                Intent intent = new Intent(QuestionActivity.this, QuestionActivity.class);
+
+                intent.putExtra(QUESTION_COUNT_EXTRA_VALUE, ++questionCount);
+
+                startActivity(intent);
             }
         });
     }
