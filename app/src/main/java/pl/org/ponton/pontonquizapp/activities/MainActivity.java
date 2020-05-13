@@ -71,23 +71,26 @@ public class MainActivity extends AppCompatActivity {
 
         View layout = inflater.inflate(R.layout.menu_layout, null);
 
+        final Button buttonWebPage = layout.findViewById(R.id.menu_button_web_page);
+
+        buttonWebPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://ponton.org.pl"));
+
+                startActivity(intent);
+            }
+        });
+
         layout.measure(View.MeasureSpec.UNSPECIFIED,
                 View.MeasureSpec.UNSPECIFIED);
         PopupWindow popup = new PopupWindow(layout, FrameLayout.LayoutParams.WRAP_CONTENT,
                 FrameLayout.LayoutParams.WRAP_CONTENT, true);
         popup.showAsDropDown(buttonMenu, 5, 5);
 
-        initMenuButtons();
+
     }
 
-    private void initMenuButtons() {
-        ((Button) findViewById(R.id.menu_button_web_page)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                
-            }
-        });
-    }
 
     private void initSelectLevelButtons() {
         buttonLevel1 = findViewById(R.id.button_level1);
