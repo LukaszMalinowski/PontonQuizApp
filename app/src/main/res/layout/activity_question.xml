@@ -32,12 +32,12 @@
         android:layout_height="wrap_content"
         android:background="@drawable/level_bar"
         android:gravity="center"
+        android:paddingBottom="10dp"
         android:text="@string/poziom1"
         android:textColor="#FFFFFF"
-        android:paddingBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView_questionCount"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_ponton_question" />
 
     <TextView
         android:id="@+id/textView_questionCount"
@@ -45,12 +45,12 @@
         android:layout_height="wrap_content"
         android:background="@drawable/question_bar"
         android:gravity="center"
+        android:paddingBottom="10dp"
         android:text="@string/pytanie_1"
         android:textColor="#FFFFFF"
-        android:paddingBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView_questionValue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_levelInfo" />
 
     <TextView
         android:id="@+id/textView_questionValue"
@@ -58,78 +58,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="5dp"
         android:background="@drawable/background_question"
         android:gravity="center"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:text="@string/tre_pytania"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/button_top_left"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_questionCount" />
 
 <!--    AnswerButtons-->
-
-    <pl.org.ponton.pontonquizapp.questions.AnswerButton
-        android:id="@+id/button_bottom_left"
-        android:layout_width="164dp"
-        android:layout_height="184dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/answer_button_bottom_left"
-        android:maxWidth="50dp"
-        android:maxHeight="50dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <pl.org.ponton.pontonquizapp.questions.AnswerButton
-        android:id="@+id/button_top_left"
-        android:layout_width="164dp"
-        android:layout_height="184dp"
-        android:background="@drawable/answer_button_top_left"
-        android:maxWidth="50dp"
-        android:maxHeight="50dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/button_bottom_left"
-        app:layout_constraintStart_toStartOf="@+id/button_bottom_left" />
-
-    <pl.org.ponton.pontonquizapp.questions.AnswerButton
-        android:id="@+id/button_top_right"
-        android:layout_width="164dp"
-        android:layout_height="184dp"
-        android:background="@drawable/answer_button_top_right"
-        android:maxWidth="50dp"
-        android:maxHeight="50dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/button_bottom_right"
-        app:layout_constraintEnd_toEndOf="@+id/button_bottom_right" />
-
-    <pl.org.ponton.pontonquizapp.questions.AnswerButton
-        android:id="@+id/button_bottom_right"
-        android:layout_width="164dp"
-        android:layout_height="184dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/answer_button_bottom_right"
-        android:maxWidth="50dp"
-        android:maxHeight="50dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/button_next"
@@ -137,8 +76,77 @@
         android:layout_height="wrap_content"
         android:background="@drawable/button_next_bad"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintBottom_toTopOf="@+id/button_bottom_left"
+        app:layout_constraintBottom_toBottomOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="@+id/tableLayout"
+        app:layout_constraintStart_toStartOf="@+id/tableLayout"
+        app:layout_constraintTop_toTopOf="@+id/tableLayout" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button_bottom_left" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_questionValue">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <pl.org.ponton.pontonquizapp.questions.AnswerButton
+                android:id="@+id/button_top_left"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/answer_button_top_left"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF" />
+
+            <pl.org.ponton.pontonquizapp.questions.AnswerButton
+                android:id="@+id/button_top_right"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/answer_button_top_right"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <pl.org.ponton.pontonquizapp.questions.AnswerButton
+                android:id="@+id/button_bottom_left"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/answer_button_bottom_left"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF" />
+
+            <pl.org.ponton.pontonquizapp.questions.AnswerButton
+                android:id="@+id/button_bottom_right"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/answer_button_bottom_right"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF" />
+        </TableRow>
+
+    </TableLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
