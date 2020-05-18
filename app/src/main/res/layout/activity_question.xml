@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.QuestionActivity"
-    android:background="@drawable/background_vol2">
+    android:background="@drawable/gradient_background">
 
     <Button
         android:id="@+id/button_return"
