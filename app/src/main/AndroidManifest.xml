@@ -21,6 +21,9 @@
         </activity>
         <activity android:name=".activities.QuestionActivity" />
         <activity android:name=".activities.MainActivity" />
+        <activity android:name=".activities.menu.AboutUsActivity" />
+        <activity android:name=".activities.menu.ContactActivity" />
+        <activity android:name=".activities.menu.QuizActivity" />
     </application>
 
 </manifest>

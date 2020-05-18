@@ -159,7 +159,7 @@ public class QuestionActivity extends AppCompatActivity {
 
         Random random = new Random();
 
-        List<String> tempAnswers = new ArrayList();
+        List<String> tempAnswers = new ArrayList<>();
 
         tempAnswers.addAll(question.getAnswers());
 

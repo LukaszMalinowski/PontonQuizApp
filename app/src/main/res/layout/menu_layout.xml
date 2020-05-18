@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/menu_button_o_nas"
+        android:id="@+id/menu_button_abous_us"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
@@ -34,7 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/menu_button_quiz" />
 
     <Button
-        android:id="@+id/menu_button_kontakt"
+        android:id="@+id/menu_button_contact"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
@@ -44,14 +44,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/menu_button_o_nas" />
+        app:layout_constraintTop_toBottomOf="@+id/menu_button_abous_us" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/menu_button_kontakt">
+        app:layout_constraintTop_toBottomOf="@+id/menu_button_contact">
 
         <Button
             android:id="@+id/menu_button_facebook"

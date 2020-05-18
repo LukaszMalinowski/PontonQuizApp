@@ -15,6 +15,9 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import pl.org.ponton.pontonquizapp.R;
+import pl.org.ponton.pontonquizapp.activities.menu.AboutUsActivity;
+import pl.org.ponton.pontonquizapp.activities.menu.ContactActivity;
+import pl.org.ponton.pontonquizapp.activities.menu.QuizActivity;
 import pl.org.ponton.pontonquizapp.levels.Level;
 import pl.org.ponton.pontonquizapp.user.User;
 
@@ -71,12 +74,38 @@ public class MainActivity extends AppCompatActivity {
 
         final Button buttonWebPage = layout.findViewById(R.id.menu_button_web_page);
 
+        final Button buttonAboutUs = layout.findViewById(R.id.menu_button_abous_us);
+
+        final Button buttonContact = layout.findViewById(R.id.menu_button_contact);
+
+        final Button buttonQuiz = layout.findViewById(R.id.menu_button_quiz);
+
         buttonWebPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://ponton.org.pl"));
-
                 startActivity(intent);
+            }
+        });
+
+        buttonAboutUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startNewActivity(AboutUsActivity.class);
+            }
+        });
+
+        buttonContact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startNewActivity(ContactActivity.class);
+            }
+        });
+
+        buttonQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startNewActivity(QuizActivity.class);
             }
         });
 
@@ -85,10 +114,12 @@ public class MainActivity extends AppCompatActivity {
         PopupWindow popup = new PopupWindow(layout, FrameLayout.LayoutParams.WRAP_CONTENT,
                 FrameLayout.LayoutParams.WRAP_CONTENT, true);
         popup.showAsDropDown(buttonMenu, 5, 5);
-
-
     }
 
+    private void startNewActivity(Class<?> cls) {
+        Intent intent = new Intent(this, cls);
+        startActivity(intent);
+    }
 
     private void initSelectLevelButtons() {
         buttonLevel1 = findViewById(R.id.button_level1);
