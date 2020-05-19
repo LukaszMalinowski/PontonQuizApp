@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
     private SharedPreferences preferences;
 
+    private Button buttonKnowlageBook;
+
     private Button buttonMenu;
 
     private Button buttonLevel1;
@@ -54,6 +56,21 @@ public class MainActivity extends AppCompatActivity {
         initScoreText();
 
         initSelectLevelButtons();
+
+        initKnowlageBookButton();
+    }
+
+    private void initKnowlageBookButton() {
+        buttonKnowlageBook = findViewById(R.id.button_book);
+
+        buttonKnowlageBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, KnowlageBookActivity.class);
+                startActivity(intent);
+                MainActivity.this.finish();
+            }
+        });
     }
 
     private void initMenu() {
