@@ -204,6 +204,7 @@ public class QuestionActivity extends AppCompatActivity {
                     button.getBackground().setColorFilter(Color.GREEN, PorterDuff.Mode.MULTIPLY);
             }
 
+
             if(!button.isChecked())
                 continue;
 

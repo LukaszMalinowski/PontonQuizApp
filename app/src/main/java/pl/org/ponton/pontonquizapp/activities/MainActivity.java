@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         buttonKnowlageBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, KnowlageBookActivity.class);
+                Intent intent = new Intent(MainActivity.this, KnowledgeBookActivity.class);
                 startActivity(intent);
                 MainActivity.this.finish();
             }
@@ -97,11 +97,36 @@ public class MainActivity extends AppCompatActivity {
 
         final Button buttonQuiz = layout.findViewById(R.id.menu_button_quiz);
 
+        final Button buttonFacebook = layout.findViewById(R.id.menu_button_facebook);
+
+        final Button buttonInstagram = layout.findViewById(R.id.menu_button_instagram);
+
         buttonWebPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://ponton.org.pl"));
+                startNewWebPageActivity("http://ponton.org.pl");
+            }
+        });
+
+        buttonFacebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent;
+                try {
+                    MainActivity.this.getApplicationContext().getPackageManager().getPackageInfo("com.facebook.katana", 0);
+                    intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/40637122051"));
+                } catch (Exception e) {
+                    intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/grupaponton"));
+                }
+
                 startActivity(intent);
+            }
+        });
+
+        buttonInstagram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startNewWebPageActivity("https://www.instagram.com/grupaponton");
             }
         });
 
@@ -131,6 +156,11 @@ public class MainActivity extends AppCompatActivity {
         PopupWindow popup = new PopupWindow(layout, FrameLayout.LayoutParams.WRAP_CONTENT,
                 FrameLayout.LayoutParams.WRAP_CONTENT, true);
         popup.showAsDropDown(buttonMenu, 5, 5);
+    }
+
+    private void startNewWebPageActivity(String url) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(intent);
     }
 
     private void startNewActivity(Class<?> cls) {
