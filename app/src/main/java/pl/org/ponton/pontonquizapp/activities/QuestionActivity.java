@@ -124,7 +124,7 @@ public class QuestionActivity extends AppCompatActivity {
                     button.setChecked(true);
                     buttonNextLevel.setVisibility(View.VISIBLE);
                     buttonNextLevel.setClickable(true);
-                    confirmActionHandler(v);
+                    confirmActionHandler();
                 }
             });
         }
@@ -195,24 +195,21 @@ public class QuestionActivity extends AppCompatActivity {
         });
     }
 
-    private void confirmActionHandler(View v) {
-        for (AnswerButton button : buttonList) {
-            for (AnswerButton tempButton : buttonList) {
-                tempButton.setClickable(false);
+    private void confirmActionHandler() {
+        for (int i = 0; i < buttonList.size(); i++) {
+            if(buttonList.get(i).isCorrect())
+                buttonList.get(i).setCorrectBackground(i);
 
-                if(button.isCorrect())
-                    button.getBackground().setColorFilter(Color.GREEN, PorterDuff.Mode.MULTIPLY);
-            }
+            buttonList.get(i).setClickable(false);
 
-
-            if(!button.isChecked())
+            if(!buttonList.get(i).isChecked())
                 continue;
 
-            if(button.isCorrect()) {
+            if(buttonList.get(i).isCorrect()) {
                 User.getUser().setScore(User.getUser().getScore() + 100);
             }
             else {
-                button.getBackground().setColorFilter(Color.RED, PorterDuff.Mode.MULTIPLY);
+                buttonList.get(i).setBadBackground(i);
                 if(addQuestions)
                     level.addWrongQuestion(question);
             }
