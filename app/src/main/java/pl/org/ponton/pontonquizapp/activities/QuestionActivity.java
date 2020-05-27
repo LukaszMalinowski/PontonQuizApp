@@ -44,6 +44,8 @@ public class QuestionActivity extends AppCompatActivity {
 
     private boolean addQuestions = true;
 
+    private boolean firstInit = false;
+
     private Integer questionCount;
 
     @Override
@@ -88,14 +90,18 @@ public class QuestionActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        
+        if(!firstInit) {
+            initButtons();
 
-        initButtons();
+            initQuestionText();
 
-        initQuestionText();
+            addButtonListeners();
 
-        addButtonListeners();
+            initNextQuestionButton();
+        }
 
-        initNextQuestionButton();
+        firstInit = true;
     }
 
     private void initNextQuestionButton() {
@@ -216,11 +222,11 @@ public class QuestionActivity extends AppCompatActivity {
         }
     }
 
-
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(QuestionActivity.this, MainActivity.class);
         startActivity(intent);
         finish();
     }
+
 }
