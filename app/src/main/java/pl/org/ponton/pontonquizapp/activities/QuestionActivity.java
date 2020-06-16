@@ -52,6 +52,8 @@ public class QuestionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
+        System.out.println("=================================");
+        System.out.println("ON CREATE");
 
         Context context = getApplicationContext();
 
@@ -90,7 +92,7 @@ public class QuestionActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        
+
         if(!firstInit) {
             initButtons();
 
@@ -153,7 +155,6 @@ public class QuestionActivity extends AppCompatActivity {
         for (AnswerButton button : buttonList) {
             button.setChecked(false);
             button.setCorrect(false);
-            button.getBackground().clearColorFilter();
         }
 
         List<AnswerButton> tempList = new ArrayList<>();
@@ -212,9 +213,11 @@ public class QuestionActivity extends AppCompatActivity {
                 continue;
 
             if(buttonList.get(i).isCorrect()) {
+                buttonNextLevel.setBackground(getResources().getDrawable(R.drawable.button_next_correct));
                 User.getUser().setScore(User.getUser().getScore() + 100);
             }
             else {
+                buttonNextLevel.setBackground(getResources().getDrawable(R.drawable.button_next_bad));
                 buttonList.get(i).setBadBackground(i);
                 if(addQuestions)
                     level.addWrongQuestion(question);

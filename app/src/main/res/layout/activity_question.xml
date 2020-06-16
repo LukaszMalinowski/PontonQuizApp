@@ -7,77 +7,89 @@
     android:background="@drawable/gradient_background"
     tools:context=".activities.QuestionActivity">
 
-    <Button
-        android:id="@+id/button_return"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/button_return"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/logo_ponton_question"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:contentDescription="@string/logo_ponton_question"
-        app:layout_constraintBottom_toBottomOf="@+id/button_return"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button_return"
-        app:srcCompat="@drawable/logo_ponton_question" />
-
-    <TextView
-        android:id="@+id/textView_levelInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/level_bar"
-        android:gravity="center"
-        android:paddingBottom="10dp"
-        android:text="@string/poziom1"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo_ponton_question" />
-
-    <TextView
-        android:id="@+id/textView_questionCount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/question_bar"
-        android:gravity="center"
-        android:paddingBottom="10dp"
-        android:text="@string/pytanie_1"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_levelInfo" />
-
-    <TextView
-        android:id="@+id/textView_questionValue"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/background_question"
-        android:gravity="center"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:text="@string/tre_pytania"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_questionCount" />
-
     <!--    AnswerButtons-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="0dp"
+        android:id="@+id/questionsLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/button_return"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_return"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/logo_ponton_question"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:contentDescription="@string/logo_ponton_question"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo_ponton_question" />
+
+        <TextView
+            android:id="@+id/textView_levelInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/level_bar"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:text="@string/poziom1"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/logo_ponton_question"
+            app:layout_constraintStart_toStartOf="@+id/logo_ponton_question"
+            app:layout_constraintTop_toBottomOf="@+id/logo_ponton_question" />
+
+        <TextView
+            android:id="@+id/textView_questionValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_question"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="@string/tre_pytania"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_questionCount" />
+
+        <TextView
+            android:id="@+id/textView_questionCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/question_bar"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:text="@string/pytanie_1"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/textView_levelInfo"
+            app:layout_constraintStart_toStartOf="@+id/textView_levelInfo"
+            app:layout_constraintTop_toBottomOf="@+id/textView_levelInfo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutButtons"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_questionValue">
+        app:layout_constraintTop_toBottomOf="@+id/questionsLayout">
 
         <pl.org.ponton.pontonquizapp.questions.AnswerButton
             android:id="@+id/button_top_left"
@@ -172,6 +184,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4"
             tools:visibility="invisible" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
@@ -180,10 +193,10 @@
         android:layout_height="wrap_content"
         android:background="@drawable/confirm_button"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
-        app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
-        app:layout_constraintStart_toStartOf="@+id/constraintLayout"
-        app:layout_constraintTop_toTopOf="@+id/constraintLayout" />
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayoutButtons"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayoutButtons"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayoutButtons"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayoutButtons" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
